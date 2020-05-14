@@ -43,7 +43,7 @@ También contiene un resumen de los comandos empleados así como una conclusión
 <br>
 
 
-<div id="id6"></div>
+<div id="init"></div>
 
 **Índice**
 
@@ -214,7 +214,7 @@ contenido aquí
 
 <div id="id6"></div>
 
-## 6. BIBLIOGRAFÍA
+## 6. REFERENCIAS
 
 - [**referencia**](enlace.com)
 
