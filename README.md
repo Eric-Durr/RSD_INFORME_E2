@@ -17,4 +17,4 @@ El informe ha sido realizado por los alumnos:
 <br>
 <br>
 
-Acceda al informe [**aquí**](./INFORME.md)
+Acceda al informe [**aquí**](./Markdown/INFORME.md)
