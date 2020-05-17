@@ -576,13 +576,19 @@ A continuación se muestra una lista que contiene cada uno de los comandos emple
 
 ## 6. REFERENCIAS
 
-###### eric
-
-###### noah
-- [**referencia**](enlace.com)
 
 
-
+- [Blog de GNUNick | Rutas por defecto Cisco](https://gnunick.blogspot.com/2011/08/rutas-por-defecto-cisco.html)
+- [Documentación de GNS3](https://docs.gns3.com/)
+- [Blog de LibrosNetworking | la ruta por defecto](https://librosnetworking.blogspot.com/2012/04/la-ruta-por-defecto.html)
+- [tutorialspoint.com | Asignación de direcciones IPv4](https://www.tutorialspoint.com/es/ipv4/ipv4_vlsm.htm)
+- [Wikipedia | Cisco IOS](https://en.wikipedia.org/wiki/Cisco_IOS)
+- [Wikipedia | GNS-3](https://en.wikipedia.org/wiki/Graphical_Network_Simulator-3)
+- [Documentación de Cisco | Configuración de ejemplo para RIPv2](https://www.cisco.com/c/es_mx/support/docs/ip/routing-information-protocol-rip/13719-50.html)
+- [Free CCNA workbook | default-information originate ](https://www.freeccnaworkbook.com/workbooks/ccna/configuring-rip-default-information-originate)
+- [Documentación de Cisco | RIP Command reference](https://www.cisco.com/c/en/us/td/docs/ios/iproute_rip/command/reference/irr_book/irr_rip.html)
+- [IETF | RIP](https://tools.ietf.org/html/rfc1058)
+- [IETF | RIPv2](https://tools.ietf.org/html/rfc2453)
 
 
 
