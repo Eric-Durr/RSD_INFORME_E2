@@ -246,6 +246,13 @@ contenido aquí
 
 ###### eric
 
+- [Blog de GNUNick | Rutas por defecto Cisco](https://gnunick.blogspot.com/2011/08/rutas-por-defecto-cisco.html)
+- [Documentación de GNS3](https://docs.gns3.com/)
+- [Blog de LibrosNetworking | la ruta por defecto](https://librosnetworking.blogspot.com/2012/04/la-ruta-por-defecto.html)
+- [tutorialspoint.com | Asignación de direcciones IPv4](https://www.tutorialspoint.com/es/ipv4/ipv4_vlsm.htm)
+- [Wikipedia | Cisco IOS](https://en.wikipedia.org/wiki/Cisco_IOS)
+- [Wikipedia | GNS-3](https://en.wikipedia.org/wiki/Graphical_Network_Simulator-3)
+
 ###### noah
 - [**referencia**](enlace.com)
 
