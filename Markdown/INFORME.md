@@ -327,13 +327,14 @@ contenido aquí
 - **`no ip route [DIRECCIÓN RED/MÁSCARA] [GATEWAY]`**
 > **Se ejecuta en:** Terminal de configuración | router.
 
+> **Función**
+
 - **`ip route 0.0.0.0 0.0.0.0 [GATEWAY]`**
 > **Se ejecuta en:** Terminal de configuración | router.
 
 > **Función**
 
 
-> **Función**
 - **`router rip`**
 > **Se ejecuta en:** Terminal de configuración | router.
 
