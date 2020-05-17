@@ -25,7 +25,7 @@
 <br>
 <br>
 
-    Informe realizado por Éric Dürr Sierra y Noah Sanchez
+    Informe realizado por Éric Dürr Sierra y Noah Sánchez
                            (alu0101027005)   (alu0101134956)
 <br>
 <br>
@@ -56,6 +56,15 @@ También contiene un resumen de los comandos empleados así como una conclusión
 ## 5. [Evidencias del trabajo en grupo](#id5).......................................18 
 ## 6. [Referencias](#id6)................................................................................19 
 
+<<<<<<< HEAD
+=======
+## 1. [Introducción](#id1)
+## 2. [Enrutamiento estático](#id2) 
+## 3. [Enrutamiento dinámico](#id3)
+## 4. [Resumen de comandos](#id4)
+## 5. [Evidencias del trabajo en grupo](#id5)
+## 6. [Referencias](#id6)
+>>>>>>> RSDI2/Faltas
 
 
 <br>
@@ -135,7 +144,7 @@ La práctica 2 tiene como principales objetivos:
 - Denominar el concepto de interfaz pasiva, saber cuando se aplica y conocer los comandos necesarios.
 - Saber ccómo configurar para que propague una ruta por defecto.
 
-Se puede apreciar como en este caso se extiende de la práctica 1 y asumimos tareas que ya se han empleado anteriormente para pasar, en esta ocasión, a la configuración de los protocolos de red. Concretamente debemos adaptar los router para intercomunicarse mediante RIP (Routing Information Protocol) extendiendo también conceptos aplicados anteriormente que serán cruciales para una configuracdión "limpia" de una red con este protocolo
+Se puede apreciar como en este caso se extiende de la práctica 1 y asumimos tareas que ya se han empleado anteriormente para pasar, en esta ocasión, a la configuración de los protocolos de red. Concretamente debemos adaptar los router para intercomunicarse mediante RIP (Routing Information Protocol) extendiendo también conceptos aplicados anteriormente que serán cruciales para una configuración "limpia" de una red con este protocolo
 
 <br>
 <br>
@@ -454,13 +463,13 @@ router1(config-keychain)# exit
 router1# write
 ```
 
-Solo quedaria realizar la autentificacion R.I.P de todas las interfaces de los QuaggaRouters, es necesario esperar un tiempo para que el algoritmo converja y se actualicen las tablas de enrutamiento.
+Solo quedaría realizar la autentificación R.I.P de todas las interfaces de los QuaggaRouters, es necesario esperar un tiempo para que el algoritmo converja y se actualicen las tablas de enrutamiento.
 
-En el ultimo paso, vamos a configurar R.I.P para que permita propagar de forma automatica una ruta por defecto desde un router hasta el resto de routers que se encuentren en la red. Esto lo hacemos ya que si, por ejemplo quisiemos enviar un paquete desde PC1 a internet, estando el enlace de QuaggaRouter1 a QuaggaRouter3 caido, el PC1 no podria acceder a intenet. Si hiciemos lo indicado anteriormente, accederia por la via de QuaggaRouter2.
+En el ultimo paso, vamos a configurar R.I.P para que permita propagar de forma automatica una ruta por defecto desde un router hasta el resto de routers que se encuentren en la red. Esto lo hacemos ya que si, por ejemplo quisiemos enviar un paquete desde PC1 a internet, estando el enlace de QuaggaRouter1 a QuaggaRouter3 caido, el PC1 no podría acceder a intenet. Si hiciemos lo indicado anteriormente, accedería por la via de QuaggaRouter2.
 
-Para configurar esto primero añadimos una ruta por defecto de QuaggaRouter3 a QuaggaRouter4, luego, en el QuaggaRouter4, vamos a añadir la ruta sumarizada del conjunto de redes de la red corporativa. Aplicando la teoria de sumarizacion obtendriamos la direccion sumarizada: 192.168.1.0/25. La mascara de la direccion sumarizada es 25 ya que en las tres redes a sumarizar, coinciden los 25 primeros bits de los 32 bits totales de las diferentes redes a sumarizar, el resto de bits, se colocan a 0.
+Para configurar esto primero añadimos una ruta por defecto de QuaggaRouter3 a QuaggaRouter4, luego, en el QuaggaRouter4, vamos a añadir la ruta sumarizada del conjunto de redes de la red corporativa. Aplicando la teoria de sumarización obtendriamos la dirección sumarizada: 192.168.1.0/25. La máscara de la dirección sumarizada es 25 ya que en las tres redes a sumarizar, coinciden los 25 primeros bits de los 32 bits totales de las diferentes redes a sumarizar, el resto de bits, se colocan a 0.
 
-Quedaria comprobar la conectividad entre el QuaggaRouter3 y el PC4, y por ultimo activar el QuaggaRouter-3 como fuente de informacion por defecto con el comando ```default-information originate```. Este comando activar ́a el router como fuente de informacion por defecto y propagara dicha informacion al resto de routers de la red. En QuaggaRouter1 y QuaggaRouter habran aparecido las rutas por defecto.
+Quedaría comprobar la conectividad entre el QuaggaRouter3 y el PC4, y por último activar el QuaggaRouter-3 como fuente de información por defecto con el comando ```default-information originate```. Este comando activará el router como fuente de informacioó por defecto y propagará dicha informacion al resto de routers de la red. En QuaggaRouter1 y QuaggaRouter habran aparecido las rutas por defecto.
 
 Tambien podemos combrobar que hay conectividad entre el PC1 y el PC2, al igual que si eliminamos el enlace de QuaggaRouter1 y QuaggaRouter3, el PC1 se conectaria igualemente a la red de Internet.
 
@@ -664,7 +673,7 @@ En esta ocasión ambos participantes nos hemos instalado la herramienta GNS3 y p
 
 Ambos roles se adoptan al mismo tiempo y para ello los componentes comparten la pantalla para saber qué se está haciendo en todo momento simulando una especie de *pair programming* como el de SCRUM. De esta forma se practica el trabajo grupal y la interacción entre los miembros. Una vez se tengan que intercambiar los roles el repositorio es compartido y se descarga en el equipo del otro usuario, continuando así por donde lo dejó.
 
-Este método varía en cuanto al desarrollo de este mismo informe, donde nos hemos podido dividir el trabajo de una manera mas "aislada" para que la redacción se desarrolle por separado y se pueda realizar en menos tiempo. Sin embargo esto no implica que ambos participantes hayan estado en continua comunicación. 
+Este método varía en cuanto al desarrollo de este mismo informe, donde nos hemos podido dividir el trabajo de una manera más "aislada" para que la redacción se desarrolle por separado y se pueda realizar en menos tiempo. Sin embargo esto no implica que ambos participantes hayan estado en continua comunicación. 
 
 Una de las pruebas que puede evidenciar que el trabajo se ha realizado en grupo son las estadísticas que GitHub proporciona acerca de la interacción con el repositorio al que suben los archivos. 
 
