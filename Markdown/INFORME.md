@@ -567,6 +567,18 @@ A continuación se muestra una lista que contiene cada uno de los comandos emple
 
 ## 5 .EVIDENCIAS DEL TRABAJO EN GRUPO
 
+Para este trabajo en grupo se ha empleado la plataforma GitHub ya que proporciona una forma de dividir el trabajo que no aisle a ninguno de los dos participantes en cuanto a las tareas a realizar. Implementa muchas herramientas para comprobar el flujo de trabajo y para controlar el volumen de trabajo asignado. Además la herramienta git de control de versiones nos permite poder trabajar en el mismo directorio sin solapar el trabajo realizado.
+
+En esta ocasión ambos participantes nos hemos instalado la herramienta GNS3 y para dividir el ejercicio práctico como tal hemos estado intercambiando roles. Los roles que adoptamos son el de supervisor y el de ejecutor, el cual cambiamos de manera periódica según el volumen de trabajo.
+
+Ambos roles se adoptan al mismo tiempo y para ello los componentes comparten la pantalla para saber qué se está haciendo en todo momento simulando una especie de *pair programming* como el de SCRUM. De esta forma se practica el trabajo grupal y la interacción entre los miembros. Una vez se tengan que intercambiar los roles el repositorio es compartido y se descarga en el equipo del otro usuario, continuando así por donde lo dejó.
+
+Este método varía en cuanto al desarrollo de este mismo informe, donde nos hemos podido dividir el trabajo de una manera mas "aislada" para que la redacción se desarrolle por separado y se pueda realizar en menos tiempo. Sin embargo esto no implica que ambos participantes hayan estado en continua comunicación. 
+
+Una de las pruebas que puede evidenciar que el trabajo se ha realizado en grupo son las estadísticas que GitHub proporciona acerca de la interacción con el repositorio al que suben los archivos. 
+
+![imagen del repositorio github, insigts](./images/)
+
 <br>
 <br>
 <br>
@@ -604,4 +616,4 @@ A continuación se muestra una lista que contiene cada uno de los comandos emple
 
 
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&uarr;  [**Volver al inicio**](#init)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&uarr;  [**Volver al inicio**](#init)
