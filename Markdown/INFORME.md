@@ -218,15 +218,41 @@ contenido aquí
 ## 4. RESUMEN DE COMANDOS
  
 - **`ifconfig`**
-- **`ip addr show`**
-- **`ifconfig [INTERFAZ] [DIRECCIÓN HOST/MÁSCARA]`**
-- **`ip addr add [DIRECCIÓN HOST/MÁSCARA] dev [INTERFAZ]`**
-- **`ip addr del [DIRECCIÓN HOST/MÁSCARA] dev [INTERFAZ]`**
-- **`route -n`**
-- **`ip route show`**
-- **`route add default gw [DIRECCIÓN GATEWAY]`**
-- **`ip route add default via [DIRECCIÓN GATEWAY]`**
+> **Se ejecuta en:** Terminal Linux | host.
 
+> **Función:** Ejecutado sin argumentos proporciona información sobre las interfaces de red activas, su estado y su configuración.
+- **`ip addr show`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función:** Se muestra información relativa a las direcciones de las tarjetas de red activas.
+- **`ifconfig [INTERFAZ] [DIRECCIÓN HOST/MÁSCARA]`**
+> **Se ejecuta en:**  Terminal Linux | host.
+
+> **Función**
+- **`ip addr add [DIRECCIÓN HOST/MÁSCARA] dev [INTERFAZ]`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función**
+- **`ip addr del [DIRECCIÓN HOST/MÁSCARA] dev [INTERFAZ]`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función**
+- **`route -n`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función**
+- **`ip route show`**
+> **Se ejecuta en:** Terminal Linux | host .
+
+> **Función**
+- **`route add default gw [DIRECCIÓN GATEWAY]`**
+> **Se ejecuta en:**  Terminal Linux | host.
+
+> **Función**
+- **`ip route add default via [DIRECCIÓN GATEWAY]`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función**
 - ```ps
     #/etc/networ/interfaces
     
@@ -235,94 +261,133 @@ contenido aquí
     address 8.0.0.2/24
     gateway 8.0.0.1
   ```
+> **Se ejecuta en:** Terminal Linux | host.
 
-- **`ifup eth0`**
->
->
-- **`ifdown eth0`**
->
->
+> **Función**
+- **`ifup [INTERFAZ]`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función**
+- **`ifdown [INTERFAZ]`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función**
 - **`vtysh`**
->
->
+> **Se ejecuta en:** Terminal Linux | router.
+
+> **Función**
 - **`show interfaces`**
->
->
+> **Se ejecuta en:** Terminal vtysh | router.
+
+> **Función**
 - **`show ip route`**
->
->
+> **Se ejecuta en:** Terminal vtysh | router.
+
+> **Función**
 - **`configure terminal`**
->
->
+> **Se ejecuta en:** Terminal vtysh | router.
+
+> **Función**
 - **`exit`**
->
->
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función**
 - **`no [COMANDO]`**
->
->
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función**
 - **`write`**
->
->
-- **`interface [INTERFAZ]`**
->
->
-- **`ip address [DIRECCIÓN]`**
->
->
-- **`no ip address [DIRECCIÓN]`**
->
->
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función**
+- **`interface [INTERFAZ]`** Terminal de configuración | router.
+> **Se ejecuta en:**
+
+> **Función**
+- **`ip address [DIRECCIÓN]`** Terminal de configuración parte de interfaz | router.
+> **Se ejecuta en:**
+
+> **Función**
+- **`no ip address [DIRECCIÓN]`** Terminal de configuración parte de interfaz | router.
+> **Se ejecuta en:**
+
+> **Función**
 - **`no shutdown`**
->
->
+> **Se ejecuta en:** Terminal de configuración parte de interfaz | router.
+
+> **Función**
 - **`link-detect`**
->
->
+> **Se ejecuta en:** Terminal de configuración parte de interfaz | router.
+
+> **Función**
 - **`ip route [DIRECCIÓN RED/MÁSCARA] [GATEWAY]`**
->
->
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función**
 - **`no ip route [DIRECCIÓN RED/MÁSCARA] [GATEWAY]`**
->
->
+> **Se ejecuta en:** Terminal de configuración | router.
+
+- **`ip route 0.0.0.0 0.0.0.0 [GATEWAY]`**
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función**
+
+
+> **Función**
 - **`router rip`**
->
->
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función**
 - **`version 2`**
->
->
+> **Se ejecuta en:** Terminal de configuración parte de rip | router.
+
+> **Función**
 - **`network [DIRECCIÓN RED/MÁSCARA]`**
->
->
+> **Se ejecuta en:** Terminal de configuración parte de rip | router.
+
+> **Función**
 - **`ping [DIRECCIÓN DISPOSITIVO DESTINO]`**
->
->
+> **Se ejecuta en:** Terminal Linux y vtysh | host y router 
+
+> **Función**
 - **`traceroute [DIRECCIÓN DISPOSITIVO DESTINO]`**
->
->
+> **Se ejecuta en:** Terminal Linux y vtysh | host y router
+
+> **Función**
 - **`passive-interface [INTERFAZ]`**
->
->
+> **Se ejecuta en:** Terminal de configuración parte de rip | router.
+
+> **Función**
 - **`neighbor [DIRECCIÓN DISPOSITIVO VECINO]`**
->
->
+> **Se ejecuta en:** Terminal de configuración parte de rip | router.
+
+> **Función**
 - **`key chain kal`**
->
->
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función**
 - **`key [id]`**
->
->
+> **Se ejecuta en:** Terminal de configuración parte de key | router.
+
+> **Función**
 - **`key-string [TEXTO]`**
->
->
+> **Se ejecuta en:** Terminal de configuración parte de key | router.
+
+> **Función**
 - **`ip rip authentication mode text`**
->
->
+> **Se ejecuta en:** Terminal de configuración parte de interfaz | router.
+
+> **Función**
 - **`ip rip authentication key-chain kal`**
->
->
+> **Se ejecuta en:** Terminal de configuración parte de interfaz | router.
+
+> **Función**
 - **`default-information originate`**
->
->
+> **Se ejecuta en:** Terminal de configuración parte de rip | router.
+
+> **Función**
+
+
 
 <br>
 <br>
