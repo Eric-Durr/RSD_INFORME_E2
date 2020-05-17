@@ -354,7 +354,9 @@ Esto debe repetirse en todos los router.
 
 ## 3. ENRUTAMIENTO DINÁMICO
 
-contenido aquí
+En este apartado nos vamos a enfocar, al igual que en la parte de Enrutamiento Estatico, en asignar direcciones IPv4 y la configuracion de R.I.P, una herramienta que nos permitira enrutar los routers de forma dinamica. Tambien nos centraremos en el uso de los comandos ```neighbor``` y ```network```, el concepto de interfaz pasiva y saber cuando asignar rutas por defecto.
+
+Podemos ver todos los pasos realizados en la configuracion de R.I.P, asi como la comprobacion de las tablas de enrutamiento dinamicas, el envio de paquetes y otros comandos como neighbor y network en el [listado del apartado 4 del informe](#id4)
 
 
 <br>
@@ -362,7 +364,25 @@ contenido aquí
 
 ### Descripción del concepto
 
-contenido aquí
+Como mencionamos en la primera parte del informe, primero tendremos que calcular las direcciones que asignaremos al objeto correspondiente (PC, tarjeta de red o QuaggaRouter). A partir de las redes que se nos facilitaban en el guion obtuvimo los datos necesarios, como el tamaño del bloque, la direccion de broadcast, y las direcciones de los host.
+
+R.I.P (Routing Information Protocol) es un protocolo de enrutamiento de pasarela interior. Se basa en el algoritmo de Bellman-Ford. Actualmente, existen tres variantes del mismo, pero nos enfocaremos exclusivamente en la version 2, que es una ampliacion de RIP para admitir direccionamiento sin clases (CIDR/VLSM).
+
+La metrica utilizada en RIP es el ńumero de saltos, esta esta limitado a 15. Cada uno de los routers que intervienen aplican el un procedimiento:
+
+1. Mantener una tabla con una entrada para cada uno de los posibles destinos en la red. Junto con cada uno de los destinos se guarda la distancia para llegar a ese destino (en RIP el numero de saltos) y el siguiente salto.
+
+2. Periodicamente (En RIP cada 30 segundos) se envía un paquete de actualización a cada vecino. Este paquete de actualización contiene los destinos de la tabla mencionada anteriormente junto con los costes para llegar a los mismos.
+
+3. Cuando llega un paquete de actualización a un vecino,  ́este añade el coste del camino por el que llego el paquete (1 para RIP) a cada entrada de la tabla recien llegada y la compara con su propia tabla. 
+
+Para cada destino, si el coste recien obtenido es menor que el almacenado en la tabla se actualiza la tabla con el nuevo coste y el siguiente salto se convierte en el vecino que envió el paquete de actualizacion. En el caso de que el siguiente salto en la tabla coincida con el vecino que ha enviado el paquete siempre se procede a actualizar la tabla, aunque la nueva distancia sea mayor.
+
+Cabe destacar que en esta parte del entregable vamos a configurar una red corporativa formada por subredes, que luego, se une a un red que simula Internet, el conjunto de subredes que forma la red corporativa usa direccionamiento privado, y la red que simula internet usa direccionamiento publico, si aplicasemos esto a la vida real, seria imprescindible el uso de una N.A.T (Network Address Translation) 
+
+N.A.T es un mecanismo utilizado por routers IP para intercambiar paquetes entre dos redes que asignan mutuamente direcciones incompatibles. Consiste en convertir, en tiempo real, las direcciones utilizadas en los paquetes transportados. También es necesario editar los paquetes para permitir la operación de protocolos que incluyen información de direcciones dentro de la conversación del protocolo.
+
+
 
 
 <br>
@@ -370,8 +390,84 @@ contenido aquí
 
 ### Descripción de los pasos realizados
 
-contenido aquí
+Al igual que en la practica anterior, en esta hacemos uso de una plantilla con la estructura de las redes que vamos a configurar. La plantilla es solamente grafica, no contiene ningun dato, a a parte de las tarjetas de red, las cuales vamos a configurar para que el sistema funcione correctamente.
 
+La plantilla consta de sistemas autonomos unidos entre si, el primer sistema autonomo es la red corporativa que contiene 3 QuaggaRouters unidos entre si, uno de ellos contiene una subred con un PC, luego, en la interconexion de los dos QuaggaRouters restantes se aloja una subred con dos PC´s, finalmente, uno de los QuaggaRouter hace de interconexion hacia el otro sistema autonomo, que en esta practica actuara como Internet, este sistema contiene un solo QuaggaRouter y un PC
+
+<div id="plantilla2"></div>
+
+
+![imagen de la plantilla de la red](.images/)
+
+El primer paso a realizar es la asignacion de direcciones, tanto la de los PC´s como la de los routers, gracias a que nos proporcionan las direcciones de cada subred dentro de la red corporativa, podemos sacar las posibles direcciones asignables de todas las tarjetas de red. Obviaremos los detalles de este paso ya que se explica detalladamente en la parte 1 del entregable.
+
+El segundo paso consiste en activar R.I.Pv2 en los QuaggaRouters de la red corporativa, una vez hecho esto habra que asignar las redes a traves de las que se desee publicar rutas mediante RIP, esto se consigue mediante el comando network, hacemos referencia a ese comando en el [listado del apartado 4 del informe](#id4), por ejemplo para el QuaggaRouter 1 seria: 
+
+```
+router1(config-router)# network 192.168.1.0/26
+router1(config-router)# network 192.168.1.128/30
+router1(config-router)# network 192.168.1.132/30
+```
+
+Se procede a realizar este paso en los dos QuaggaRouters restantes, sin embargo, no añadimos la red que comunica a internet, ya que se utilizara de otro modo.
+
+Ahora solo quedaria comprobar que las tablas de enrutamiento de cada router, con el comando ```show ip route```
+
+Para ver que todo funciona a la perfeccion, quedaria enviar paquetes de un PC a otro, y ver que se envian y se reciben correctamente, al igual que apagar una la interconexion de uno de los router por las que se esta enrutando el paquete, y comprobar, que la tabla de enrutamiento de los routers se actualizan correctamente.
+
+En cuanto al tercer paso, se procede a realizar una captura de los paquetes enviados por un PC en *Wireshark* y filtrar por R.I.P.
+
+En dichas capturas vemos que las direcciones MAC e IP de destino corresponden a direcciones multicast. Como los PCs no
+estan suscritos al grupo, descartan este trafico. Muchos switches tratan este tipo de trafico
+igual que el trafico broadcast, por lo que se reenvıan las tramas con los mensajes R.I.P hacia todos sus
+puertos, generando trafico innecesario.
+
+Estos paquetes que constituyen un riesgo de seguridad. Cualquiera podrıa analizar el trafico mediante un analizador de trafico de paquetes.
+
+En la siguiente imagen podemos ver capturas de paquetes filtradas por R.I.P:
+
+![imagen de captura de PC1](./images/)
+
+![imagen de captura de PC3](./images/)
+
+
+En el cuarto paso vamos a configurar los ruters como interfaces pasivas. El termino interfaz pasiva se refiere a interfaces por las cuales el protocolo de enrutamiento  no envía actualizaciones de enrutamiento aunque pueda publicar las redes configuradas en esas interfaces a los routers vecinos.
+
+Esto es necesario hacerlo por seguridad ya que no es conveniente que por ejemplo, routers de clientes finales puedan recibir información del conjunto de una red aunque esto puede ser solucionado con la autentificación, otro motivo para usar las interfaces pasivas es para evitar cargar enlaces con tráfico de los protocolos de enrutamiento si el router conectado en el otro extremo del enlace no ejecuta el protocolo, en este caso se estará enviando información por un enlace que no tiene ninguna utilidad.
+
+Se configuran las interfaces R.I.P como entidades pasivas con el comando ```passive-interface```. Al configurar todos los routers de forma pasiva, podemos comprobar que los PC´s dejan de recibir actualizaciones R.I.P y se cambian las tablas de enrutamiento de los routers.
+
+![imagen de canbio de tabla de enrutamiento](./images/)
+
+En en el quinto paso vamos a hacer uso del comando neighbor, ya que en una de las comprobacion del paso anterior era hacer una conexion entre el PC1 y el QuaggaRouter3, y no hubo ninguna conexion exitosa a pesar de tener dos vias para el acceso, con este comando se establecera una conexion directa entre ambos routers (Router 1 y 2)que permitira la propagacion de mensajes RIP de forma directa sin utilizar multicasting. 
+
+Ambos routers se comunican de manera directa. Ahora los paquetes RIP ya no son multicast, las direcciones de origen y 
+de destino son unicast.
+
+Para evitar que los host de las redes puedan escuchar el trafico R.I.P hemos utilizado las interfaces pasivas. Esta no emite trafico RIP pero si lo recibe. Sin embargo, un atacante pueda inyectar paquetes RIP ficticios para modificar las tablas de enrutamiento de los routers reales, lo que se conoce como (RIP spoofing). 
+
+En el sexto paso vamos a evitar que sucedan estos ataques, se utiliza el mecanismo de autenticacion que provee RIPv2.
+
+Aqui podemo ver un ejemplo como se realizaria la autenticacion RIP en un router
+
+```
+router1(config)# key chain kal
+router1(config-keychain)# key 1
+router1(config-keychain-key)# key-string clavepararip
+router1(config-keychain-key)# exit
+router1(config-keychain)# exit
+router1# write
+```
+
+Solo quedaria realizar la autentificacion R.I.P de todas las interfaces de los QuaggaRouters, es necesario esperar un tiempo para que el algoritmo converja y se actualicen las tablas de enrutamiento.
+
+En el ultimo paso, vamos a configurar R.I.P para que permita propagar de forma automatica una ruta por defecto desde un router hasta el resto de routers que se encuentren en la red. Esto lo hacemos ya que si, por ejemplo quisiemos enviar un paquete desde PC1 a internet, estando el enlace de QuaggaRouter1 a QuaggaRouter3 caido, el PC1 no podria acceder a intenet. Si hiciemos lo indicado anteriormente, accederia por la via de QuaggaRouter2.
+
+Para configurar esto primero añadimos una ruta por defecto de QuaggaRouter3 a QuaggaRouter4, luego, en el QuaggaRouter4, vamos a añadir la ruta sumarizada del conjunto de redes de la red corporativa. Aplicando la teoria de sumarizacion obtendriamos la direccion sumarizada: 192.168.1.0/25. La mascara de la direccion sumarizada es 25 ya que en las tres redes a sumarizar, coinciden los 25 primeros bits de los 32 bits totales de las diferentes redes a sumarizar, el resto de bits, se colocan a 0.
+
+Quedaria comprobar la conectividad entre el QuaggaRouter3 y el PC4, y por ultimo activar el QuaggaRouter-3 como fuente de informacion por defecto con el comando ```default-information originate```. Este comando activar ́a el router como fuente de informacion por defecto y propagara dicha informacion al resto de routers de la red. En QuaggaRouter1 y QuaggaRouter habran aparecido las rutas por defecto.
+
+Tambien podemos combrobar que hay conectividad entre el PC1 y el PC2, al igual que si eliminamos el enlace de QuaggaRouter1 y QuaggaRouter3, el PC1 se conectaria igualemente a la red de Internet.
 
 <br>
 <br>
