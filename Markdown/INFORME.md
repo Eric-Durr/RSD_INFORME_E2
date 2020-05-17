@@ -317,7 +317,11 @@ Tras haber configurado los PC's habrá que configurar los router mediante la lin
 
 Este proceso debe repetirse con cada una de las interfaces del router. Una vez hecho se sale del modo de configuración ejecutando `exit` y antes de finalizar con este router se deben guardar los cambios ejecutando `write` , de lo contrario al reiniciar el sistema esta configuración será deshecha.
 
-La configuración de las interfaces debe repetirse con todos los router de la red y una vez esto se haya finalizado tendremos establecidas conexiones punto a punto. Estas conexiones las podremos comprobar ejecutando el comando `ping [DIRECCIÓN]` con cada una de las conexiones directas de cada red, sin embargo no será posible acceder a redes directas. Para solucionar esto, dado que el enrutamiento es estático se deben configurar manualmente cada una de las tablas de enrutamiento de cad auno de los dispositivos de red.
+La configuración de las interfaces debe repetirse con todos los router de la red y una vez esto se haya finalizado tendremos establecidas conexiones punto a punto. Estas conexiones las podremos comprobar ejecutando el comando `ping [DIRECCIÓN]` con cada una de las conexiones directas de cada red, sin embargo no será posible acceder a redes no directamente conexas. Para solucionar esto, dado que el enrutamiento es estático se deben configurar manualmente cada una de las tablas de enrutamiento de cad auno de los dispositivos de red.
+
+![imagen de ping exitoso en punto a punto](./images/)
+
+![imagen de ping fallido a otra red](./images/)
 
 1. Volver a entrar a la interfaz de configuración de la terminal del router: consola > `vtysh` > `configure terminal` 
 
@@ -326,7 +330,18 @@ La configuración de las interfaces debe repetirse con todos los router de la re
 
 Esto se debe hacer con cada una de las redes que queramos conectar en cada router de la topología. De nuevo cabe recordar que si queremos que se guarde el cambio se debe executar `write` en la interfaz de ***vtysh***. De lo contrario la configuración, al reiniciar las máquinas, desaparecería.
 
-En este punto ya podríamos ejecutar el comando `ping [DIRECCIÓN]` y se debería de poder acceder a cualquier red desde cualquier dispositivo.
+En este punto ya podríamos ejecutar el comando `ping [DIRECCIÓN]` y se debería de poder acceder a cualquier red desde cualquier dispositivo. En caso negativo ejecutar el comando `traceroute` nos dará pistas del disposit6ivo que está mal configurado y donde puede localizarse el error.
+
+![imagen de ping exitoso entre dos redes](./images/)
+
+El último paso que restaría sería configurar las rutas por defecto en los router para resolver solicitudes en la tabla que no coincidad con las entradas ya dispuestas. En este caso se envía la ruta por defecto hacia ***QuaggaRouter-1***. Por ende, en cada uno de los router debemos seguir los siguientes pasos:
+
+1. Entrar en la interfaz de configuración del router como se ha hecho anteriormente: consola > `vtysh` > `configure terminal` 
+
+2. Ejecutar ``ip route 0.0.0.0 0.0.0.0 [GATEWAY]``
+> Este comando añade una entrada a la tabla de enrutamiento que hará coincidir en caso de no asignarse a ninguna de las redes previstas. Esta debe ser todo 0 y su máscara de red debe ser igualmente todo 0. Por otro lado la interfaz a la que se dirige debe ser el gateway hacia *QuaggaRouter-1*.
+
+Esto debe repetirse en todos los router.
 
 <br>
 <br>
