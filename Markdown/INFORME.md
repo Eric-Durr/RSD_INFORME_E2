@@ -25,7 +25,7 @@
 <br>
 <br>
 
-    Informe realizado por Eric Dürr Sierra y Noah Sanchez
+    Informe realizado por Éric Dürr Sierra y Noah Sanchez
                            (alu0101027005)   (alu00000000)
 <br>
 <br>
@@ -383,11 +383,177 @@ contenido aquí
 
 ## 4. RESUMEN DE COMANDOS
 
-###### eric
+A continuación se muestra una lista que contiene cada uno de los comandos empleados en ambas prácticas junto a sus argumentos. En cada uno de ellos se detalla dónde son empleados y su utilidad .
+ 
+- **`ifconfig`**
+> **Se ejecuta en:** Terminal Linux | host.
 
-###### noah
+> **Función:** Ejecutado sin argumentos proporciona información sobre las interfaces de red activas, su estado y su configuración.
+- **`ip addr show`**
+> **Se ejecuta en:** Terminal Linux | host.
 
-contenido aquí
+> **Función:** Se muestra información relativa a las direcciones de las tarjetas de red activas.
+- **`ifconfig [INTERFAZ] [DIRECCIÓN HOST/MÁSCARA]`**
+> **Se ejecuta en:**  Terminal Linux | host.
+
+> **Función:** Permite configurar una interfaz de red para establecer una dirección IP .
+- **`ip addr add [DIRECCIÓN HOST/MÁSCARA] dev [INTERFAZ]`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función:** Permite añadir a una interfaz de red  una dirección IP .
+- **`ip addr del [DIRECCIÓN HOST/MÁSCARA] dev [INTERFAZ]`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función:** Permite eliminar a una interfaz de red su dirección IP.
+- **`route -n`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función:** Permite visualizar la tabla de enrutamiento del host en cuestión.
+- **`ip route show`**
+> **Se ejecuta en:** Terminal Linux | host .
+
+> **Función:** Permite visualizar la tabla de enrutamiento del host en cuestión.
+- **`route add default gw [DIRECCIÓN GATEWAY]`**
+> **Se ejecuta en:**  Terminal Linux | host.
+
+> **Función:** Añade una entrada a la tabla de enrutamiento.
+- **`ip route add default via [DIRECCIÓN GATEWAY]`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función:** Añade una entrada a la tabla de enrutamiento. 
+- ```ps
+    #/etc/networ/interfaces
+    
+    auto eth0
+    iface eth0 inet static
+    address 8.0.0.2/24
+    gateway 8.0.0.1
+  ```
+> **Función:** Configurar de manera automática las interfaces de red de los host.
+- **`ifup [INTERFAZ]`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función:** Activar la interfaz de red 
+- **`ifdown [INTERFAZ]`**
+> **Se ejecuta en:** Terminal Linux | host.
+
+> **Función:** Desactivar la interfaz de red
+- **`vtysh`**
+> **Se ejecuta en:** Terminal Linux | router.
+
+> **Función:** Entrar a la linea de comandos de configuración del router.
+- **`show interfaces`**
+> **Se ejecuta en:** Terminal vtysh | router.
+
+> **Función:** Ver las interfaces de red y su configuración. 
+- **`show ip route`**
+> **Se ejecuta en:** Terminal vtysh | router.
+
+> **Función:** Ver la tabla de enrutamiento del router.
+- **`configure terminal`**
+> **Se ejecuta en:** Terminal vtysh | router.
+
+> **Función:** Acceder a la interfaz de configuración del router.
+- **`exit`**
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función:** Salir de la interfaz actual.
+- **`no [COMANDO]`**
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función:** Se emplea para deshacer cualquier comando realizado en la configuración.
+- **`write`**
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función:** Permite guardar los cambios de manera permanente.
+- **`interface [INTERFAZ]`**
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función:** Permite acceder a la interfaz de configiuración de una interfaz de red dentro del router.
+- **`ip address [DIRECCIÓN/MÁSCARA]`** 
+> **Se ejecuta en:**Terminal de configuración parte de interfaz | router.
+
+> **Función:** Establece una dirección IP para la interfaz que se configura.
+- **`no ip address [DIRECCIÓN/MÁSCARA]`** 
+> **Se ejecuta en:** Terminal de configuración parte de interfaz | router.
+
+> **Función:** Elimina una dirección IP de la interfaz que se configura.
+- **`no shutdown`**
+> **Se ejecuta en:** Terminal de configuración parte de interfaz | router.
+
+> **Función:** Activa la interfaz de red.
+- **`link-detect`**
+> **Se ejecuta en:** Terminal de configuración parte de interfaz | router.
+
+> **Función:** Activa la detección de enlaces para la interfaz de red.
+- **`ip route [DIRECCIÓN RED/MÁSCARA] [GATEWAY]`**
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función:** Añade una entrada a la tabla de enrutamiento del dispositivo de red.
+- **`no ip route [DIRECCIÓN RED/MÁSCARA] [GATEWAY]`**
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función:** Elimina una entrada a la tabla de enrutamiento del dispositivo de red.
+
+- **`ip route 0.0.0.0 0.0.0.0 [GATEWAY]`**
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función:** Establece una ruta por defecto para el router.
+
+- **`router rip`**
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función:** Accede a la configuración del router para RIP.
+- **`version 2`**
+> **Se ejecuta en:** Terminal de configuración parte de rip | router.
+
+> **Función:** Activa la versión 2 del protocolo RIP en el PC.
+- **`network [DIRECCIÓN RED/MÁSCARA]`**
+> **Se ejecuta en:** Terminal de configuración parte de rip | router.
+
+> **Función:** Especifica rutas a las que se le va a aplicar RIP para publicarlas.
+- **`ping [DIRECCIÓN DISPOSITIVO DESTINO]`**
+> **Se ejecuta en:** Terminal Linux y vtysh | host y router. 
+
+> **Función:** Envía una serie de paquuetes a otro dispositivo para comprobar la conexión.
+- **`traceroute [DIRECCIÓN DISPOSITIVO DESTINO]`**
+> **Se ejecuta en:** Terminal Linux y vtysh | host y router.
+
+> **Función:** Emite un paquete que se emplea para determinar la ruta que se sigue para alcanzar el destino indicado.
+- **`passive-interface [INTERFAZ]`**
+> **Se ejecuta en:** Terminal de configuración parte de rip | router.
+
+> **Función:** Configurar una interfaz de red como interfaz pasiva.
+- **`neighbor [DIRECCIÓN DISPOSITIVO VECINO]`**
+> **Se ejecuta en:** Terminal de configuración parte de rip | router.
+
+> **Función:** Este comando le indica al protocolo que debe comunicarse con actualizaciones unicast a un vecino específico.
+
+- **`key chain kal`**
+> **Se ejecuta en:** Terminal de configuración | router.
+
+> **Función:** Abre la interfaz de configuración de la clave del router.
+- **`key [id]`**
+> **Se ejecuta en:** Terminal de configuración parte de key | router.
+
+> **Función:** Establece el número identificativo para una clave de autenticación
+- **`key-string [TEXTO]`**
+> **Se ejecuta en:** Terminal de configuración parte de key | router.
+
+> **Función:** Establece el valor de cadena de texto para la clave.
+- **`ip rip authentication mode text`**
+> **Se ejecuta en:** Terminal de configuración parte de interfaz | router.
+
+> **Función:** Establece un modo de autentificación mediante texto en la interfaz indicada
+- **`ip rip authentication key-chain kal`**
+> **Se ejecuta en:** Terminal de configuración parte de interfaz | router.
+
+> **Función:** Activa la autentificación en la interfaz y configura la clave.
+- **`default-information originate`**
+> **Se ejecuta en:** Terminal de configuración parte de rip | router.
+
+> **Función:** Activa un dispositivo de red como fuente de información por defecto.
+
 
 <br>
 <br>
