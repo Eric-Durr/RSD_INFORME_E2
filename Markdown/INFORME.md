@@ -25,7 +25,7 @@
 <br>
 <br>
 
-    Informe realizado por Eric Dürr Sierra y Noah Sanchez
+    Informe realizado por Éric Dürr Sierra y Noah Sanchez
                            (alu0101027005)   (alu00000000)
 <br>
 <br>
@@ -216,12 +216,113 @@ contenido aquí
 <div id="id4"></div>
 
 ## 4. RESUMEN DE COMANDOS
+ 
+- **`ifconfig`**
+- **`ip addr show`**
+- **`ifconfig [INTERFAZ] [DIRECCIÓN HOST/MÁSCARA]`**
+- **`ip addr add [DIRECCIÓN HOST/MÁSCARA] dev [INTERFAZ]`**
+- **`ip addr del [DIRECCIÓN HOST/MÁSCARA] dev [INTERFAZ]`**
+- **`route -n`**
+- **`ip route show`**
+- **`route add default gw [DIRECCIÓN GATEWAY]`**
+- **`ip route add default via [DIRECCIÓN GATEWAY]`**
 
-###### eric
+- ```ps
+    #/etc/networ/interfaces
+    
+    auto eth0
+    iface eth0 inet static
+    address 8.0.0.2/24
+    gateway 8.0.0.1
+  ```
 
-###### noah
-
-contenido aquí
+- **`ifup eth0`**
+>
+>
+- **`ifdown eth0`**
+>
+>
+- **`vtysh`**
+>
+>
+- **`show interfaces`**
+>
+>
+- **`show ip route`**
+>
+>
+- **`configure terminal`**
+>
+>
+- **`exit`**
+>
+>
+- **`no [COMANDO]`**
+>
+>
+- **`write`**
+>
+>
+- **`interface [INTERFAZ]`**
+>
+>
+- **`ip address [DIRECCIÓN]`**
+>
+>
+- **`no ip address [DIRECCIÓN]`**
+>
+>
+- **`no shutdown`**
+>
+>
+- **`link-detect`**
+>
+>
+- **`ip route [DIRECCIÓN RED/MÁSCARA] [GATEWAY]`**
+>
+>
+- **`no ip route [DIRECCIÓN RED/MÁSCARA] [GATEWAY]`**
+>
+>
+- **`router rip`**
+>
+>
+- **`version 2`**
+>
+>
+- **`network [DIRECCIÓN RED/MÁSCARA]`**
+>
+>
+- **`ping [DIRECCIÓN DISPOSITIVO DESTINO]`**
+>
+>
+- **`traceroute [DIRECCIÓN DISPOSITIVO DESTINO]`**
+>
+>
+- **`passive-interface [INTERFAZ]`**
+>
+>
+- **`neighbor [DIRECCIÓN DISPOSITIVO VECINO]`**
+>
+>
+- **`key chain kal`**
+>
+>
+- **`key [id]`**
+>
+>
+- **`key-string [TEXTO]`**
+>
+>
+- **`ip rip authentication mode text`**
+>
+>
+- **`ip rip authentication key-chain kal`**
+>
+>
+- **`default-information originate`**
+>
+>
 
 <br>
 <br>
