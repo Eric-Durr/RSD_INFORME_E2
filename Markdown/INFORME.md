@@ -661,7 +661,7 @@ A continuación se muestra una lista que contiene cada uno de los comandos emple
 <div id="id5"></div>
 
 
-## 5 .EVIDENCIAS DEL TRABAJO EN GRUPO
+## 5. EVIDENCIAS DEL TRABAJO EN GRUPO
 
 <br>
 <br>
