@@ -217,6 +217,10 @@ contenido aquí
 
 ## 4. RESUMEN DE COMANDOS
 
+###### eric
+
+###### noah
+
 contenido aquí
 
 <br>
@@ -240,6 +244,9 @@ contenido aquí
 
 ## 6. REFERENCIAS
 
+###### eric
+
+###### noah
 - [**referencia**](enlace.com)
 
 
