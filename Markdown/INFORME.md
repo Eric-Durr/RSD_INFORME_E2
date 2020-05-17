@@ -47,14 +47,14 @@ También contiene un resumen de los comandos empleados así como una conclusión
 
 
 
-**Índice**
+## **Índice**
 
-1. [Introducción](#id1)
-2. [Enruitamiento estático](#id2) 
-3. [Enruitamiento dinámico](#id3)
-4. [Resumen de comandos](#id4)
-5. [Evidencias del trabajo en grupo](#id5)
-6. [Referencias](#id6)
+## 1. [Introducción](#id1)
+## 2. [Enruitamiento estático](#id2) 
+## 3. [Enruitamiento dinámico](#id3)
+## 4. [Resumen de comandos](#id4)
+## 5. [Evidencias del trabajo en grupo](#id5)
+## 6. [Referencias](#id6)
 
 
 <br>
