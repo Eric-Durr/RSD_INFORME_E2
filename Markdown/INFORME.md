@@ -386,6 +386,7 @@ contenido aquí
 A continuación se muestra una lista que contiene cada uno de los comandos empleados en ambas prácticas junto a sus argumentos. En cada uno de ellos se detalla dónde son empleados y su utilidad .
  
 - **`ifconfig`**
+
 > **Se ejecuta en:** Terminal Linux | host.
 
 > **Función:** Ejecutado sin argumentos proporciona información sobre las interfaces de red activas, su estado y su configuración.
