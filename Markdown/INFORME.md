@@ -47,20 +47,17 @@ También contiene un resumen de los comandos empleados así como una conclusión
 
 
 
-## **Índice**
+## **Índice** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; página:
 
-## 1. [Introducción](#id1)
-## 2. [Enruitamiento estático](#id2) 
-## 3. [Enruitamiento dinámico](#id3)
-## 4. [Resumen de comandos](#id4)
-## 5. [Evidencias del trabajo en grupo](#id5)
-## 6. [Referencias](#id6)
+## 1. [Introducción](#id1)...............................................................................3
+## 2. [Enruitamiento estático](#id2)...........................................................4 
+## 3. [Enruitamiento dinámico](#id3)......................................................10 
+## 4. [Resumen de comandos](#id4).......................................................13 
+## 5. [Evidencias del trabajo en grupo](#id5).......................................18 
+## 6. [Referencias](#id6)................................................................................19 
 
 
-<br>
-<br>
-<br>
-<br>
+
 <br>
 <br>
 <br>
@@ -94,7 +91,7 @@ También contiene un resumen de los comandos empleados así como una conclusión
 
 <div id="id1"></div>
 
-## 1. INTRODUCCIÓN
+## 1. INTRODUCCIÓN 
 
 <br>
 <br>
@@ -151,7 +148,7 @@ Emplea Dynamips, un software que permite simular Cisco IOS (Cisco Internetwork O
 
 Además esta herramienta de simulación nos permitirá hacer capturas de la red con el uso de Wireshark entre las distintas interfaces del entorno que estemos emulando.
 
-![Imagen del logotipo de GNS3](/images/logo.jpeg)
+![Imagen del logotipo de GNS3](../images/logo.jpeg)
 
 <br>
 <br>
@@ -226,7 +223,7 @@ La plantilla sobre la que se va a operar consta de 3 router interconectados entr
 <div id="plantilla"></div>
 
 
-![imagen de la plantilla de la red](/images/Plantilla1.png)
+![imagen de la plantilla de la red](../images/Plantilla1.png)
 
 Una vez hemos aclarado la topología de nuestra red se puede comenzar con el diseño de la misma. De esta manera el primer paso es realizar una asignación de las  direcciones de nuestra red. Para ello hay que tener en cuenta los aspectos teóricos mencionados en el anterior apartado ya que vamos a aplicar un método VLSM de direccionamiento IPv4. 
 
@@ -329,7 +326,7 @@ Esto se debe hacer con cada una de las redes que queramos conectar en cada route
 
 En este punto ya podríamos ejecutar el comando `ping [DIRECCIÓN]` y se debería de poder acceder a cualquier red desde cualquier dispositivo. En caso negativo ejecutar el comando `traceroute` nos dará pistas del disposit6ivo que está mal configurado y donde puede localizarse el error.
 
-![imagen de ping exitoso entre dos redes](/images/exitoso.jpeg)
+![imagen de ping exitoso entre dos redes](../images/exitoso.jpeg)
 
 El último paso que restaría sería configurar las rutas por defecto en los router para resolver solicitudes en la tabla que no coincidad con las entradas ya dispuestas. En este caso se envía la ruta por defecto hacia ***QuaggaRouter-1***. Por ende, en cada uno de los router debemos seguir los siguientes pasos:
 
@@ -394,7 +391,7 @@ La plantilla consta de sistemas autonomos unidos entre si, el primer sistema aut
 <div id="plantilla2"></div>
 
 
-![imagen de la plantilla de la red](/images/Plantilla2.png)
+![imagen de la plantilla de la red](../images/Plantilla2.png)
 
 El primer paso a realizar es la asignacion de direcciones, tanto la de los PC´s como la de los routers, gracias a que nos proporcionan las direcciones de cada subred dentro de la red corporativa, podemos sacar las posibles direcciones asignables de todas las tarjetas de red. Obviaremos los detalles de este paso ya que se explica detalladamente en la parte 1 del entregable.
 
@@ -423,9 +420,9 @@ Estos paquetes que constituyen un riesgo de seguridad. Cualquiera podrıa analiz
 
 En la siguiente imagen podemos ver capturas de paquetes filtradas por R.I.P:
 
-![imagen de captura de PC1](/images/capturaPC1.png)
+![imagen de captura de PC1](../images/capturaPC1.png)
 
-![imagen de captura de PC3](/images/capturaPC3.png)
+![imagen de captura de PC3](../images/capturaPC3.png)
 
 
 En el cuarto paso vamos a configurar los ruters como interfaces pasivas. El termino interfaz pasiva se refiere a interfaces por las cuales el protocolo de enrutamiento  no envía actualizaciones de enrutamiento aunque pueda publicar las redes configuradas en esas interfaces a los routers vecinos.
@@ -434,8 +431,8 @@ Esto es necesario hacerlo por seguridad ya que no es conveniente que por ejemplo
 
 Se configuran las interfaces R.I.P como entidades pasivas con el comando ```passive-interface```. Al configurar todos los routers de forma pasiva, podemos comprobar que los PC´s dejan de recibir actualizaciones R.I.P y se cambian las tablas de enrutamiento de los routers.
 
-![imagen de cambio de tabla de enrutamiento](/images/Prepasivo.jpeg)
-![imagen de cambio de tabla de enrutamiento](/images/post-pasivoR2.png)
+![imagen de cambio de tabla de enrutamiento](../images/Prepasivo.jpeg)
+![imagen de cambio de tabla de enrutamiento](../images/post-pasivoR2.png)
 
 En en el quinto paso vamos a hacer uso del comando neighbor, ya que en una de las comprobacion del paso anterior era hacer una conexion entre el PC1 y el QuaggaRouter3, y no hubo ninguna conexion exitosa a pesar de tener dos vias para el acceso, con este comando se establecera una conexion directa entre ambos routers (Router 1 y 2)que permitira la propagacion de mensajes RIP de forma directa sin utilizar multicasting. 
 
@@ -671,13 +668,18 @@ Este método varía en cuanto al desarrollo de este mismo informe, donde nos hem
 
 Una de las pruebas que puede evidenciar que el trabajo se ha realizado en grupo son las estadísticas que GitHub proporciona acerca de la interacción con el repositorio al que suben los archivos. 
 
-![imagen del repositorio github, insigts](/images/Evidencia.jpeg)
+![imagen del repositorio github, insigts](../images/Evidencia.jpeg)
 
 <br>
 <br>
 <br>
 <br>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <div id="id6"></div>
 
