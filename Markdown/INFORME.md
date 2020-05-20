@@ -56,17 +56,6 @@ También contiene un resumen de los comandos empleados así como una conclusión
 ## 5. [Evidencias del trabajo en grupo](#id5).......................................18 
 ## 6. [Referencias](#id6)................................................................................19 
 
-<<<<<<< HEAD
-=======
-## 1. [Introducción](#id1)
-## 2. [Enrutamiento estático](#id2) 
-## 3. [Enrutamiento dinámico](#id3)
-## 4. [Resumen de comandos](#id4)
-## 5. [Evidencias del trabajo en grupo](#id5)
-## 6. [Referencias](#id6)
->>>>>>> RSDI2/Faltas
-
-
 <br>
 <br>
 <br>
